@@ -1,393 +1,61 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #02060d;
-    color: white;
-    min-height: 100vh;
-    padding: 40px 30px;
-}
-
-
-/* HEADER */
-
-header {
     text-align: center;
-    margin-bottom: 30px;
+    background: #f2f2f2;
+    padding: 30px;
 }
-
-.logo {
-    font-size: 40px;
-}
-
-header h1 {
-    font-size: 42px;
-    letter-spacing: 2px;
-    margin: 10px 0;
-}
-
-header h1 span {
-    color: #00aaff;
-}
-
-header p {
-    color: #8b9aaa;
-    font-size: 14px;
-}
-
-
-/* MAIN */
-
-main {
-    max-width: 1100px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-
-/* LEFT CARD */
-
-.information-card {
-    background-color: #050c16;
-
-    border: 1px solid #153554;
-    border-radius: 12px;
-
-    padding: 20px;
-
-    box-shadow: 0 0 15px rgba(0, 140, 255, 0.15);
-}
-
-
-/* PROFILE CARD */
-
-.profile-card {
-    background-color: #081827;
-
-    border: 1px solid #00aaff;
-    border-radius: 12px;
-
-    padding: 25px;
-
-    box-shadow:
-        0 0 20px rgba(0, 170, 255, 0.25);
-
-    transition: background-color 0.3s;
-}
-
-
-/* HEADINGS */
 
 h2 {
-    color: white;
-    font-size: 18px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
-
-
-/* INPUTS */
 
 input {
-    width: 100%;
-
-    background-color: #081522;
-    color: white;
-
-    border: 1px solid #1c3b59;
-    border-radius: 7px;
-
-    padding: 12px;
-    margin-bottom: 12px;
-
-    font-size: 14px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
 }
-
-input::placeholder {
-    color: #68798b;
-}
-
-input:focus {
-    outline: none;
-    border-color: #00aaff;
-}
-
-
-/* BUTTONS */
 
 button {
+    padding: 10px 15px;
+    margin: 5px;
     border: none;
-    border-radius: 7px;
-
-    padding: 11px;
-
-    color: white;
-    background: linear-gradient(
-        90deg,
-        #00aaff,
-        #7b2cff
-    );
-
+    border-radius: 5px;
     cursor: pointer;
-
-    font-weight: bold;
-
-    transition: 0.2s;
+    background: #333;
+    color: white;
 }
 
 button:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
-
-/* CREATE PROFILE */
-
-.create-btn {
-    width: 100%;
-    margin-top: 3px;
+#profile {
+    width: 300px;
+    min-height: 180px;
+    margin: 25px auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-
-/* LINE */
-
-hr {
-    border: none;
-    border-top: 1px solid #18334d;
-    margin: 20px 0;
-}
-
-
-/* ACTION BUTTONS */
-
-.actions {
-    display: grid;
-
-    grid-template-columns:
-        1fr 1.5fr 1.2fr;
-
-    gap: 8px;
-}
-
-
-/* REMOVE BUTTON */
-
-.remove-btn {
-    background: transparent;
-
-    border: 1px solid #ff416c;
-
-    color: #ff5b7f;
-}
-
-
-/* PROFILE TOP */
-
-.profile-top {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-
-/* AVATAR */
-
-.avatar {
-    width: 100px;
-    height: 100px;
-
-    min-width: 100px;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 48px;
-
-    background-color: #081522;
-
-    border: 3px solid #00aaff;
-
-    box-shadow:
-        0 0 15px #00aaff;
-}
-
-
-/* PROFILE INFORMATION */
-
-.profile-info h2 {
-    font-size: 22px;
-    margin-bottom: 12px;
-}
-
-.profile-info p {
-    color: #b7c5d3;
-    font-size: 14px;
+.profile-name {
+    font-size: 25px;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
-.profile-info span {
+.profile-info {
+    font-size: 16px;
+    margin: 8px;
+}
+
+.skill {
+    display: inline-block;
+    background: #333;
     color: white;
-}
-
-
-/* SKILLS */
-
-#skillList {
-    list-style: none;
-
-    background-color: rgba(0, 0, 0, 0.2);
-
-    border: 1px solid #173450;
-
-    border-radius: 8px;
-
-    padding: 8px 15px;
-}
-
-#skillList li {
-    padding: 10px 5px;
-
-    color: #d7e3ee;
-
-    border-bottom: 1px solid #18334d;
-}
-
-#skillList li:last-child {
-    border-bottom: none;
-}
-
-#skillList li::before {
-    content: "•";
-
-    color: #00aaff;
-
-    font-size: 20px;
-
-    margin-right: 10px;
-}
-
-
-/* COLOR SECTION */
-
-.color-section {
-    margin-top: 20px;
-}
-
-.color-section h3 {
-    font-size: 12px;
-    color: #8fa4b8;
-    margin-bottom: 10px;
-}
-
-
-/* 10 COLOR BUTTONS */
-
-.colors {
-    display: grid;
-
-    grid-template-columns: repeat(10, 1fr);
-
-    gap: 6px;
-}
-
-.color {
-    width: 20px;
-    height: 20px;
-
-    padding: 0;
-
-    border-radius: 50%;
-
-    border: 2px solid #ffffff55;
-}
-
-
-/* COLORS */
-
-.green {
-    background-color: #123d35;
-}
-
-.purple {
-    background-color: #30204d;
-}
-
-.pink {
-    background-color: #4d2438;
-}
-
-.orange {
-    background-color: #4d321f;
-}
-
-.yellow {
-    background-color: #4d4620;
-}
-
-.teal {
-    background-color: #164348;
-}
-
-.blue {
-    background-color: #182f50;
-}
-
-.indigo {
-    background-color: #27264f;
-}
-
-.red {
-    background-color: #4d2424;
-}
-
-.gray {
-    background-color: #30343b;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 800px) {
-
-    main {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-
-@media (max-width: 500px) {
-
-    body {
-        padding: 20px 12px;
-    }
-
-    header h1 {
-        font-size: 28px;
-    }
-
-    .profile-top {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .actions {
-        grid-template-columns: 1fr;
-    }
-
-    .colors {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
+    padding: 5px 10px;
+    margin: 4px;
+    border-radius: 15px;
 }
