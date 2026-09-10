@@ -1,102 +1,90 @@
-function createProfile() {
+const createButton = document.getElementById("create");
+const backgroundButton = document.getElementById("background");
+const addSkillButton = document.getElementById("addSkill");
+const removeButton = document.getElementById("remove");
 
-    var name = document.getElementById("name").value;
-    var course = document.getElementById("course").value;
-    var language = document.getElementById("language").value;
+const profile = document.getElementById("profile");
+
+let skills = [];
+
+createButton.addEventListener("click", function () {
+
+    const name = document.getElementById("name").value;
+    const course = document.getElementById("course").value;
+    const language = document.getElementById("language").value;
 
     if (name === "" || course === "" || language === "") {
-
-        alert("Please fill in all information.");
-
+        alert("Please fill in all fields.");
         return;
     }
 
-    document.getElementById("studentName").textContent = name;
+    profile.innerHTML = `
+        <div class="profile-name">${name}</div>
 
-    document.getElementById("studentCourse").textContent = course;
+        <div class="profile-info">
+            <strong>Course:</strong> ${course}
+        </div>
 
-    document.getElementById("studentLanguage").textContent = language;
+        <div class="profile-info">
+            <strong>Favorite Language:</strong> ${language}
+        </div>
 
-    alert("Profile created successfully!");
-}
+        <div id="skills"></div>
+    `;
 
+    skills = [];
+});
 
+backgroundButton.addEventListener("click", function () {
 
-// ADD SKILL
+    const backgrounds = [
+        "#ffcccc",
+        "#ccffcc",
+        "#ccccff",
+        "#ffffcc",
+        "#ffd9b3",
+        "#e6ccff",
+        "#ccffff",
+        "#ffccff",
+        "#d9d9d9",
+        "#cce6ff"
+    ];
 
-function addSkill() {
+    const random = Math.floor(Math.random() * backgrounds.length);
 
-    var skillInput = document.getElementById("newSkill");
+    profile.style.backgroundColor = backgrounds[random];
+});
 
-    var skill = skillInput.value.trim();
+addSkillButton.addEventListener("click", function () {
 
-    if (skill === "") {
-
-        alert("Please enter a skill.");
-
+    if (profile.innerHTML === "") {
+        alert("Create a profile first.");
         return;
     }
 
-    var newSkill = document.createElement("li");
+    const skill = prompt("Enter a skill:");
 
-    newSkill.textContent = skill;
+    if (skill !== null && skill.trim() !== "") {
 
-    document.getElementById("skillList").appendChild(newSkill);
+        skills.push(skill);
 
-    skillInput.value = "";
-}
+        const skillsDiv = document.getElementById("skills");
 
+        skillsDiv.innerHTML = "";
 
+        skills.forEach(function (item) {
+            skillsDiv.innerHTML += `
+                <span class="skill">${item}</span>
+            `;
+        });
+    }
+});
 
-// CHANGE BACKGROUND BUTTON
+removeButton.addEventListener("click", function () {
 
-function changeBackground() {
+    profile.innerHTML = "";
+    profile.style.backgroundColor = "white";
 
-    document.getElementById("profileCard").style.backgroundColor =
-        "#081827";
-}
+    skills = [];
+});
 
-
-
-// CHANGE PROFILE CARD COLOR
-
-function changeCardColor(color) {
-
-    document.getElementById("profileCard").style.backgroundColor =
-        color;
-}
-
-
-
-// REMOVE PROFILE
-
-function removeProfile() {
-
-    document.getElementById("studentName").textContent =
-        "John Doe";
-
-    document.getElementById("studentCourse").textContent =
-        "Computer Science";
-
-    document.getElementById("studentLanguage").textContent =
-        "JavaScript";
-
-
-    document.getElementById("skillList").innerHTML =
-        "<li>HTML</li>" +
-        "<li>CSS</li>" +
-        "<li>JavaScript</li>";
-
-
-    document.getElementById("name").value = "";
-
-    document.getElementById("course").value = "";
-
-    document.getElementById("language").value = "";
-
-    document.getElementById("newSkill").value = "";
-
-
-    document.getElementById("profileCard").style.backgroundColor =
-        "#081827";
-}
