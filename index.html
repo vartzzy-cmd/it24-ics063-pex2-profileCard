@@ -1,1 +1,207 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Profile</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🎓</div>
+
+        <h1>
+            STUDENT <span>PROFILE</span>
+        </h1>
+
+        <p>
+            Build your profile  • 
+            Show your skills  • 
+            Be your best
+        </p>
+    </header>
+
+
+    <main>
+
+        <!-- LEFT SIDE -->
+        <section class="information-card">
+
+            <h2>👤 Your Information</h2>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+            >
+
+            <input
+                type="text"
+                id="course"
+                placeholder="Enter your course"
+            >
+
+            <input
+                type="text"
+                id="language"
+                placeholder="Favorite programming language"
+            >
+
+            <button class="create-btn" onclick="createProfile()">
+                👤 Create Profile
+            </button>
+
+
+            <hr>
+
+
+            <h2>⚙️ Add a New Skill</h2>
+
+            <input
+                type="text"
+                id="newSkill"
+                placeholder="Enter new skill"
+            >
+
+            <div class="actions">
+
+                <button onclick="addSkill()">
+                    ＋ Add Skill
+                </button>
+
+                <button onclick="changeBackground()">
+                    🎨 Change Background
+                </button>
+
+                <button class="remove-btn" onclick="removeProfile()">
+                    🗑 Remove Profile
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE -->
+        <section class="profile-card" id="profileCard">
+
+            <div class="profile-top">
+
+                <div class="avatar">
+                    👤
+                </div>
+
+                <div class="profile-info">
+
+                    <h2 id="studentName">
+                        John Doe
+                    </h2>
+
+                    <p>
+                        🎓 Course:
+                        <span id="studentCourse">
+                            Computer Science
+                        </span>
+                    </p>
+
+                    <p>
+                        &lt;/&gt; Favorite Language:
+                        <span id="studentLanguage">
+                            JavaScript
+                        </span>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <h2>⭐ Skills</h2>
+
+            <ul id="skillList">
+
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+
+            </ul>
+
+
+            <!-- COLORS -->
+            <div class="color-section">
+
+                <h3>🎨 Choose Background Color</h3>
+
+                <div class="colors">
+
+                    <button
+                        class="color green"
+                        onclick="changeCardColor('#123d35')">
+                    </button>
+
+                    <button
+                        class="color purple"
+                        onclick="changeCardColor('#30204d')">
+                    </button>
+
+                    <button
+                        class="color pink"
+                        onclick="changeCardColor('#4d2438')">
+                    </button>
+
+                    <button
+                        class="color orange"
+                        onclick="changeCardColor('#4d321f')">
+                    </button>
+
+                    <button
+                        class="color yellow"
+                        onclick="changeCardColor('#4d4620')">
+                    </button>
+
+                    <button
+                        class="color teal"
+                        onclick="changeCardColor('#164348')">
+                    </button>
+
+                    <button
+                        class="color blue"
+                        onclick="changeCardColor('#182f50')">
+                    </button>
+
+                    <button
+                        class="color indigo"
+                        onclick="changeCardColor('#27264f')">
+                    </button>
+
+                    <button
+                        class="color red"
+                        onclick="changeCardColor('#4d2424')">
+                    </button>
+
+                    <button
+                        class="color gray"
+                        onclick="changeCardColor('#30343b')">
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
